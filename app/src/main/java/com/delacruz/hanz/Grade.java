@@ -1,34 +1,40 @@
 package com.delacruz.hanz;
 
 public class Grade {
-    String firstname;
-    String lastname;
-    long average;
+    String fname, lname;
+    double average;
 
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public long getAverage() {
-        return average;
-    }
-
-    public Grade(){
-
-    }
-
-    public Grade(String firstname, String lastname, long average) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Grade(String fname, String lname, double average) {
+        this.fname = fname;
+        this.lname = lname;
         this.average = average;
     }
 
+    public String getFname() {
+        return fname;
+    }
 
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
 
+    public String getLname() {
+        return lname;
+    }
 
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
 
+    public double getaverage() {
+        return average;
+    }
+
+    public void setaverage(double average) {
+        this.average = average;
+    }
 }
+
+
+
+

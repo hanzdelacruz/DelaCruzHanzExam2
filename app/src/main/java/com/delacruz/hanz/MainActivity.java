@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,19 +21,24 @@ public class MainActivity extends AppCompatActivity {
     private EditText eFname, eLname, eEx1, eEx2;
     private TextView tAve;
     private Button mButton;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+    ArrayList<String> keyList;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("Grade");
         eFname = findViewById(R.id.eFirstName);
         eLname = findViewById(R.id.eLastName);
         eEx1 = findViewById(R.id.eExam1);
         eEx2 = findViewById(R.id.eExam2);
         tAve = findViewById(R.id.txtAverage);
         mButton = findViewById(R.id.button2);
+        keyList = new ArrayList<>();
 
         mButton.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
@@ -44,17 +49,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void addRecord() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Grade");
         String fname = eFname.getText().toString().trim();
         String lname = eLname.getText().toString().trim();
-        Long exam1 = Long.parseLong(eEx1.getText().toString().trim());
-        Long exam2 = Long.parseLong(eEx2.getText().toString().trim());
-        Long average = (exam1 + exam2) / 2;
+        Double exam1 = Double.parseDouble (eEx1.getText().toString().trim());
+        Double  exam2 = Double.parseDouble (eEx2.getText().toString().trim());
+        Double  average = (exam1 + exam2) / 2;
 
         Grade sgrade = new Grade(fname, lname, average);
         String key = myRef.push().getKey();
         myRef.child(key).setValue(sgrade);
+        keyList.add(key);
 
         tAve.setText("Your average is: " + average);
 //        Toast.makeText(this,"Student Grade added to Firebase",Toast.LENGTH_LONG).show();

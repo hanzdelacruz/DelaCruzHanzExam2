@@ -14,7 +14,7 @@
         android:id="@+id/fname1">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/eFN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -35,7 +35,7 @@
         android:id="@+id/lname1">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/eLN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Last Name:"/>
