@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "574370619587",
+    "firebase_url": "https://delacruzhanzexam2.firebaseio.com",
+    "project_id": "delacruzhanzexam2",
+    "storage_bucket": "delacruzhanzexam2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574370619587:android:487d2e97854794c7",
+        "android_client_info": {
+          "package_name": "com.delacruz.hanz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574370619587-517blp0qhp7kn3t02gfrp3q90b30scnh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxFRM54WjGdGJwHuUgKceOkoElBG11x1c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
